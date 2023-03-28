@@ -78,7 +78,9 @@ def main():
         file_details = {"filename":Skills.name,
                         "filetype":Skills.type,"filesize":Skills.size}
         
-        raw_text = str(Skills.read(), encoding = "utf-8")
+        raw_text = docx2txt.process(Skills)
+        
+        
         
         result = prediction(raw_text)
     st.success('The output is {}'.format(result))

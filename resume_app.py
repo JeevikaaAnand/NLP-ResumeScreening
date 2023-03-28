@@ -62,7 +62,7 @@ def main():
     st.subheader("DocumentFiles")
     Skills = st.file_uploader("Upload Document", type = ["pdf","docx","doc","txt"]) 
 
-    raw_text = Skills.read()
+    raw_text = str(Skills.read(), "utf-8")
     
  
        

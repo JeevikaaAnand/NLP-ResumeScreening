@@ -77,11 +77,8 @@ def main():
       if Skills is not None:
         file_details = {"filename":Skills.name,
                         "filetype":Skills.type,"filesize":Skills.size}
-        st.write(file_details)
-      
-      
-      raw_text = str(Skills.read(), "utf-8")
-      result = prediction(raw_text)
+        raw_text = str(Skills.read(), "utf-8")
+        result = prediction(raw_text)
     st.success('The output is {}'.format(result))
 
 if __name__=='__main__':

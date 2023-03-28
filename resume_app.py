@@ -78,8 +78,9 @@ def main():
         file_details = {"filename":Skills.name,
                         "filetype":Skills.type,"filesize":Skills.size}
         raw_text = str(Skills.read(), encoding = "utf-8")
-        result = prediction(raw_text)
-    st.write('The output is {}'.format(result))
+        
+    result = prediction(raw_text)
+    st.success('The output is {}'.format(result))
 
 if __name__=='__main__':
     main()

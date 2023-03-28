@@ -59,21 +59,21 @@ def main():
     # the following lines create text boxes in which the user can enter 
     # the data required to make the prediction
 
-   st.subheader("DocumentFiles")
-   Skills = st.file_uploader("Upload Document", type = ["pdf","docx","doc","txt"]) 
+    st.subheader("DocumentFiles")
+    Skills = st.file_uploader("Upload Document", type = ["pdf","docx","doc","txt"]) 
 
-   raw_text = Skills.read()
+    raw_text = Skills.read()
     
  
        
-   result =""
+    result =""
       
     # the below line ensures that when the button called 'Predict' is clicked, 
     # the prediction function defined above is called to make the prediction 
     # and store it in the variable result
 
-   if st.button("Process"):
-    result = prediction(raw_text)
+    if st.button("Process"):
+      result = prediction(raw_text)
     st.success('The output is {}'.format(result))
 
 if __name__=='__main__':

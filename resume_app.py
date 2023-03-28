@@ -61,8 +61,9 @@ def main():
 
     st.subheader("DocumentFiles")
     Skills = st.file_uploader("Upload Document", type = ["pdf","docx","doc","txt"]) 
+    
 
-    raw_text = str(Skills.read(), "utf-8")
+    
     
  
        
@@ -73,6 +74,13 @@ def main():
     # and store it in the variable result
 
     if st.button("Process"):
+      if Skills is not None:
+        file_details = {"filename":Skills.name,
+                        "filetype":Skills.type,"filesize":Skills.size}
+        st.write(file_details)
+      
+      
+      raw_text = str(Skills.read(), "utf-8")
       result = prediction(raw_text)
     st.success('The output is {}'.format(result))
 
